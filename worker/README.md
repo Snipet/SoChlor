@@ -28,11 +28,16 @@ npm run dev                      # http://localhost:8787
 
 ## Deploy
 
+The D1 database `sochlor-keys` is already provisioned on this account; its id
+is in `wrangler.jsonc`. Wrangler creates it on the first `wrangler deploy`,
+and that includes `--dry-run`. If you ever delete the database, remove the
+`database_id` line and the next deploy provisions a fresh one.
+
 ```
 npx wrangler login
-npm run deploy                   # first deploy provisions the D1 database and writes its id into wrangler.jsonc
+npm run deploy
 npm run migrate:remote
-npx wrangler secret put REGISTER_TOKEN   # optional
+npx wrangler secret put REGISTER_TOKEN   # optional, see .dev.vars.example
 ```
 
 Then point the CLI at it: `export SOCHLOR_SERVER=https://sochlor-registry.<you>.workers.dev`.
