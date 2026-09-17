@@ -1,0 +1,4 @@
+# Copy to .dev.vars for local development. In production set it with:
+#   npx wrangler secret put REGISTER_TOKEN
+# When unset, anyone can register a public key.
+REGISTER_TOKEN=change-me

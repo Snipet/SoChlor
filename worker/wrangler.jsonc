@@ -1,0 +1,22 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "sochlor-registry",
+	"main": "src/index.ts",
+	"compatibility_date": "2026-09-17",
+	"compatibility_flags": [
+		"nodejs_compat"
+	],
+	"observability": {
+		"enabled": true
+	},
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_name": "sochlor-keys",
+			"migrations_dir": "migrations",
+			"database_id": "045938bd-c2dd-4ce0-9906-42e328c70803"
+			// database_id is omitted on purpose: the first `wrangler deploy`
+			// provisions the database and writes its id back into this file.
+		}
+	]
+}

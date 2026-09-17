@@ -1,0 +1,19 @@
+{
+  "name": "sochlor-registry",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Public key registry and signature verification endpoint for SoChlor",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "types": "wrangler types",
+    "check": "tsc --noEmit",
+    "migrate:local": "wrangler d1 migrations apply sochlor-keys --local",
+    "migrate:remote": "wrangler d1 migrations apply sochlor-keys --remote"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.3",
+    "typescript": "^7.0.2",
+    "wrangler": "^4.133.0"
+  }
+}
